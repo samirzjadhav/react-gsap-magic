@@ -1,14 +1,11 @@
 import "./App.css";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="text-3xl font-bold underline font-robert-medium">
-          Hello world!
-        </h1>
-      </header>
-    </div>
+    <main className="relative min-h-screen w-screen overflow-x-hidden">
+      <Hero />
+    </main>
   );
 }
 
