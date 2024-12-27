@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "cra-template": "1.2.0",
     "gsap": "^3.12.5",
     "react": "^19.0.0",
