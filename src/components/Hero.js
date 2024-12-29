@@ -7,6 +7,10 @@ import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // Start from the first video
@@ -56,6 +60,54 @@ const Hero = () => {
       revertOnUpdate: true,
     }
   );
+
+  useEffect(() => {
+    const videoFrame = document.querySelector("#video-frame");
+    if (videoFrame) {
+      gsap.set(videoFrame, {
+        clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
+        borderRadius: "0% 0% 40% 10%",
+      });
+
+      gsap.from(videoFrame, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        borderRadius: "0% 0% 0% 0%",
+        duration: 2,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: videoFrame,
+          start: "top center", // Adjust as needed
+          end: "bottom center",
+          scrub: true,
+        },
+      });
+    } else {
+      console.error("#video-frame not found!");
+    }
+  }, []);
+
+  // useGSAP(() => {
+  //   gsap.set("#video-frame", {
+  //     clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
+  //     borderRadius: "0 0 40% 10%",
+  //   });
+
+  //   gsap.from("#video-frame", {
+  //     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+  //     borderRadius: "0% 0% 0% 0%",
+  //     duration: 2,
+  //     ease: "power1.inOut",
+  //     scrollTrigger: {
+  //       trigger: "#video-frame",
+  //       start: "center center",
+  //       end: "bottom center",
+  //       scrub: true,
+  //     },
+  //   });
+  // });
+
+  // console.log("GSAP version:", gsap.version);
+  // console.log("ScrollTrigger registered:", gsap.plugins?.ScrollTrigger);
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
