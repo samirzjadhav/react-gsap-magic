@@ -35,6 +35,13 @@ const Hero = () => {
   };
 
   useEffect(() => {
+    videoRefs.forEach((videoSrc) => {
+      const video = document.createElement("video");
+      video.src = videoSrc;
+    });
+  }, []);
+
+  useEffect(() => {
     if (loadedVideo === totalVideos - 1) {
       setIsLoading(false);
     }
