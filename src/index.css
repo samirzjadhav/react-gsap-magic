@@ -36,6 +36,11 @@ body {
     font-family: "robert-redular";
     src: url("./assets/fonts/robert-regular.woff2") format("woff2");
   }
+
+  @font-face {
+    font-family: "zentry";
+    src: url("./assets/fonts/zentry-regular.woff2") format("woff2");
+  }
 }
 
 @layer utilities {
@@ -64,8 +69,8 @@ body {
   }
 
   .special-font b {
-    font-family: "Zentry";
-    font-feature-settings: "ss01" on;
+    font-family: "Zentry", sans-serif;
+    font-feature-settings: "ss01" on; /* Turn it on */
   }
 
   .hero-heading {
