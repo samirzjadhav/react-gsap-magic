@@ -125,7 +125,7 @@ const Hero = () => {
                 src={videoRefs[upcommingVideoIndex]} // Get the video dynamically based on currentIndex
                 loop
                 muted
-                autoPlay
+                // autoPlay
                 type="video/mp4"
                 id="current-video"
                 className="size-64 object-cover object-center scale-150 "
@@ -145,7 +145,7 @@ const Hero = () => {
           />
           <video
             src={videoRefs[currentIndex === totalVideos + 1 ? 1 : currentIndex]}
-            autoPlay
+            // autoPlay
             loop
             muted
             className="absolute left-0 right-0 z-10 size-full object-cover object-center"
