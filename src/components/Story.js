@@ -53,9 +53,9 @@ const Story = () => {
         </p>
         <div className="relative size-full">
           <AnimatedTitle
-            title="the st<b>o</b>ry of <br/> a hidden real<b>m</b>"
+            title="the st<b>o</b>ry of <br /> a hidden real<b>m</b>"
             sectonId="#story"
-            containerClass="mt-5 pointer-events-none mix-blend-difference ralative z-10"
+            containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
 
           <div className="story-img-container">
@@ -68,8 +68,8 @@ const Story = () => {
                   onMouseEnter={handleMouseEnter}
                   onMouseMove={handleMouseMove}
                   src={StoryImage}
-                  alt="etrance "
-                  className="object-cover"
+                  alt="entrance"
+                  className="object-contain"
                 />
               </div>
             </div>
