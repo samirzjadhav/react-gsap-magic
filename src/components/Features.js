@@ -8,7 +8,6 @@ import { TiLocationArrow } from "react-icons/ti";
 
 const BentoTilt = ({ children, className = "" }) => {
   const [transformStyle, setTransformStyle] = useState("");
-
   const itemRef = useRef();
 
   const handleMouseMove = (e) => {
@@ -17,7 +16,20 @@ const BentoTilt = ({ children, className = "" }) => {
     const { left, top, width, height } =
       itemRef.current.getBoundingClientRect();
 
-    setTransformStyle();
+    if (width === 0 || height === 0) {
+      console.error("Element has zero width or height.");
+      return;
+    }
+
+    const relativeX = (e.clientX - left) / width;
+    const relativeY = (e.clientY - top) / height;
+
+    const tiltX = (relativeX - 0.5) * 5;
+    const tiltY = (relativeY - 0.5) * -5;
+
+    const newTransform = `perspective(700px) rotateX(${tiltY}deg) rotateY(${tiltX}deg) scale(0.95,0.95,0.95)`;
+
+    setTransformStyle(newTransform);
   };
 
   const handleMouseLeave = () => {
@@ -26,11 +38,14 @@ const BentoTilt = ({ children, className = "" }) => {
 
   return (
     <div
-      className={className}
+      className={`${className} overflow-hidden`}
       ref={itemRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ transform: transformStyle }}
+      style={{
+        transform: transformStyle,
+        transition: transformStyle ? "none" : "transform 0.2s ease-out",
+      }}
     >
       {children}
     </div>
