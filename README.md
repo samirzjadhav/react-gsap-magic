@@ -40,8 +40,11 @@ Well-organized and reusable code components, making the project maintainable and
 
 ## 🖼️ Image and Video Section
 
-- **Image Section**: ![Home Preview](src\assets\img\readmeImage.png)
-- **Video Section**: ![video Preview](src\assets\videos\videoReadme.mp4)
+- **Image Section**:  
+  ![Home Preview](https://raw.githubusercontent.com/samirzjadhav/react-gsap-magic/main/src/assets/img/readmeImage.png)
+
+- **Video Section**:  
+  [Video Preview](https://raw.githubusercontent.com/samirzjadhav/react-gsap-magic/main/src/assets/videos/videoReadme.mp4)
 
 ## 📂 Project Dependencies
 
