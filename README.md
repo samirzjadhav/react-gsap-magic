@@ -40,8 +40,8 @@ Well-organized and reusable code components, making the project maintainable and
 
 ## 🖼️ Image and Video Section
 
-- **Image Section**: ![Home Preview](../assets/img/readmeImage.png)
-- **Video Section**: ![video Preview](../assets/videos/readmeImage.mp4)
+- **Image Section**: ![Home Preview](src\assets\img\readmeImage.png)
+- **Video Section**: ![video Preview](src\assets\videos\videoReadme.mp4)
 
 ## 📂 Project Dependencies
 
