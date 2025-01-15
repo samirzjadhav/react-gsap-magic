@@ -107,7 +107,7 @@ Here are the core dependencies used in this project:
 
 ## 👨‍💻 Author
 
-Created with ❤️ by [Samir Z Jadhav](https://portfolio-nu-five-95.vercel.app/).
+Created with ❤️ by [Samir Z Jadhav](https://samirj.vercel.app/).
 
 Feel free to star ⭐ the repository if you find this project helpful!
 
